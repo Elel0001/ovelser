@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess-number-test</title>
+</head>
+
+<body>
+    <h1>Gæt et tal mellem 0 og 10</h1>
+    <input type="number" id="tal">
+    <button>Gæt</button>
+
+    <script>
+        const knap = document.querySelector("button");
+        knap.addEventListener("click", test);
+
+        let tal = Math.floor(Math.random() * 11);
+        // floor = runder ned. 11 fordi man ellers aldrig kommer op på 10
+
+        function test() {
+            console.log(tal);
+            // "console.log (tal)"" er kun til os selv, for at se hvad tallet reelt er
+            const input = document.querySelector("#tal").value;
+            if (tal == input) {
+                confirm(input + " er rigtigt! Vil du prøve med et nyt tal?");
+                tal = Math.floor(Math.random() * 11);
+            } else if (input < tal) {
+                confirm(input + " er for lavt! Prøv igen");
+            } else {
+                confirm(input + " er for højt! Prøv igen");
+            }
+        }
+
+        // "confirm" er det der gør at boksen popper op. Forskellen fra alert og confirm er, at confirm giver mulighed for at annullere og ok, hvor alert kun kan sige ok. 
+        // Hvis der gættes rigtig og man trykker ok, laves der et nyt tal
+    </script>
+</body>
+
+</html>

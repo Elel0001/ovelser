@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alko-test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img src="snaps.webp" alt="snaps">
+    <img src="fanta.webp" alt="fanta">
+    <img src="pepsimax.webp" alt="pepsimax">
+    <img src="tuborg.webp" alt="tuborg">
+
+    <script>
+        const snaps = document.querySelector("img[alt=snaps]");
+        const fanta = document.querySelector("img[alt=fanta]");
+        const pepsimax = document.querySelector("img[alt=pepsimax]");
+        const tuborg = document.querySelector("img[alt=tuborg]");
+
+        snaps.addEventListener("click", tjek);
+        fanta.addEventListener("click", tjek);
+        pepsimax.addEventListener("click", tjek);
+        tuborg.addEventListener("click", tjek);
+
+        function tjek() {
+            console.log(this.alt);
+            if (this.alt == "snaps" || this.alt == "tuborg") {
+                console.log("indeholder alkohol");
+            } else {
+                console.log("alkoholfri");
+            }
+        }
+    </script>
+</body>
+
+</html>
